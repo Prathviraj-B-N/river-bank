@@ -1,0 +1,11 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "db/query/"
+    schema: "db/migration/"
+    database:
+      uri: "postgres://postgres:${PG_PASSWORD}@localhost:5432/postgres"
+    gen:
+      go:
+        out: "db"
+        sql_package: "pgx/v5"
